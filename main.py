@@ -25,7 +25,7 @@ bg_X1 = 0
 bg_X2 = bg.get_width()
 bg_move = 3
 
-IMAGE_PATH = "Бандерогусак для анімації (goose)"
+IMAGE_PATH = "goose_animation"
 PLAYER_IMAGES = os.listdir(IMAGE_PATH)
 
 player_size = (20,20)
