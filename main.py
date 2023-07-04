@@ -1,3 +1,4 @@
+print("Hello word")
 import random
 import os
 
