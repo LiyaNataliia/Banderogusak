@@ -1,4 +1,4 @@
-print("ololo merge conflict for Nataliya")
+print("Hello word")
 import random
 import os
 
