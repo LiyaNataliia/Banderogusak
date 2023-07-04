@@ -1,3 +1,4 @@
+print("ololo merge conflict for Nataliya")
 import random
 import os
 
