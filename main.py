@@ -20,8 +20,9 @@ COLOR_BLUE = (0, 0, 255)
 COLOR_YELLOW = (255, 255, 0)
 
 main_display = pygame.display.set_mode((WIDTH, HEIGHT))
+IMAGE_RESOURCES = "pictures"
 
-bg = pygame.transform.scale(pygame.image.load('background.png'), (WIDTH, HEIGHT))
+bg = pygame.transform.scale(pygame.image.load(IMAGE_RESOURCES + '/background.png'), (WIDTH, HEIGHT))
 bg_X1 = 0
 bg_X2 = bg.get_width()
 bg_move = 3
@@ -30,7 +31,7 @@ IMAGE_PATH = "goose_animation"
 PLAYER_IMAGES = os.listdir(IMAGE_PATH)
 
 player_size = (20,20)
-player = pygame.image.load('player.png').convert_alpha() #pygame.Surface(player_size)
+player = pygame.image.load(IMAGE_RESOURCES + '/player.png').convert_alpha() #pygame.Surface(player_size)
 # player.fill(COLOR_BLACK)
 player_rect = player.get_rect()
 # player_speed = [1, 1]
@@ -42,7 +43,7 @@ player_rect.center = (WIDTH // 4, HEIGHT // 2)
 
 def create_enemy():
     #enemy_size = (30, 30)
-    enemy = pygame.image.load('enemy.png').convert_alpha() #pygame.Surface(enemy_size)
+    enemy = pygame.image.load(IMAGE_RESOURCES + '/enemy.png').convert_alpha() #pygame.Surface(enemy_size)
     enemy_size = enemy.get_size()
     #enemy.fill(COLOR_BLUE)
     enemy_rect = pygame.Rect(WIDTH - enemy_size[0], random.randint(0, HEIGHT - enemy_size[0]), *enemy_size)
@@ -54,7 +55,7 @@ pygame.time.set_timer(CREATE_ENEMY, 1500)
 
 def create_bonus():
     #bonus_size = (35, 35)
-    bonus = pygame.image.load('bonus.png').convert_alpha() #pygame.Surface(bonus_size)
+    bonus = pygame.image.load(IMAGE_RESOURCES + '/bonus.png').convert_alpha() #pygame.Surface(bonus_size)
     bonus_size = bonus.get_size()
     #bonus.fill(COLOR_YELLOW)
     bonus_rect = pygame.Rect(random.randint(0, WIDTH - bonus_size[0]), 0, *bonus_size)
@@ -125,7 +126,7 @@ while playing:
         main_display.blit(enemy[0], enemy[1])
 
         if player_rect.colliderect(enemy[1]):
-            bg = pygame.transform.scale(pygame.image.load('GAME.png'), (WIDTH, HEIGHT))
+            bg = pygame.transform.scale(pygame.image.load(IMAGE_RESOURCES + '/GAME.png'), (WIDTH, HEIGHT))
             playing = False
             #while not playing:
             main_display.blit(bg, (0, 0))
